@@ -46,16 +46,30 @@
             'mep' => ['price' => 280, 'includes' => ['Approved MEP drawings']]
         ]
     ];
+
+    // Same image map as plans.blade.php — keeps overview card & detail page in sync
+    $planImages = [
+        1 => 'house2.jpeg',
+        2 => 'house3.jpeg',
+        3 => 'house4.jpeg',
+        4 => 'house5.jpeg',
+        5 => 'house1.jpeg',
+        6 => 'house6.jpeg',
+    ];
+    $mainImage   = asset('images/' . ($planImages[$id] ?? 'house' . ($id % 6 + 1) . '.jpeg'));
+    $nextImage1  = asset('images/project' . (($id + 1) % 14 + 1) . '.jpeg');
+    $nextImage2  = asset('images/project' . (($id + 2) % 14 + 1) . '.jpeg');
+    $nextImage3  = asset('images/project' . (($id + 3) % 14 + 1) . '.jpeg');
 @endphp
 
 <main class="bg-gray-50 pb-32" x-data="{
     activeImage: 0,
     selectedPackage: Object.keys({{ json_encode($plan['packages'] ?? []) }})[0] || null,
     images: [
-        '{{ asset('images/house' . ($id % 6 + 1) . '.jpeg') }}',
-        '{{ asset('images/house' . (($id + 1) % 6 + 1) . '.jpeg') }}',
-        '{{ asset('images/house' . (($id + 2) % 6 + 1) . '.jpeg') }}',
-        '{{ asset('images/house' . (($id + 3) % 6 + 1) . '.jpeg') }}'
+        '{{ $mainImage }}',
+        '{{ $nextImage1 }}',
+        '{{ $nextImage2 }}',
+        '{{ $nextImage3 }}'
     ],
     packages: {{ json_encode($plan['packages'] ?? []) }},
     added: false,
