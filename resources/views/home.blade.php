@@ -7,7 +7,7 @@
     <section class="relative bg-secondary overflow-hidden min-h-[90vh] flex items-center" x-data="{ shown: false }" x-intersect="shown = true">
         {{-- Background Elements --}}
         <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent z-20"></div>
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center z-0 scale-105 transform origin-center" :class="shown ? 'transition-transform duration-[10s] ease-out scale-100' : ''"></div>
+        <div class="absolute inset-0 bg-cover bg-center z-0 scale-105 transform origin-center" style="background-image: url('{{ asset('images/project1.jpeg') }}')" :class="shown ? 'transition-transform duration-[10s] ease-out scale-100' : ''"></div>
 
         {{-- Moving Architectural Silhouette --}}
         <div
