@@ -21,10 +21,10 @@
     </section>
 
     {{-- Cinematic Image --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="w-full h-[60vh] md:h-[80vh] relative overflow-hidden group rounded-[3rem] shadow-2xl">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="w-full h-[60vh] md:h-[80vh] relative overflow-hidden group rounded-[3rem] shadow-2xl mb-8">
             <div class="absolute inset-0 bg-gray-900/10 z-10"></div>
-            <img src="{{ asset('images/house3.jpeg') }}" 
+            <img src="{{ asset('images/project10.jpeg') }}" 
                  alt="ABS Architecture Studio" 
                  class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[3s] ease-out origin-bottom">
         </div>
@@ -32,7 +32,7 @@
 
     {{-- The Story & Stats --}}
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20 -mt-24 md:-mt-32">
-        <div class="flex flex-col lg:flex-row gap-16">
+        <div class="flex flex-col lg:flex-row gap-0 lg:gap-8 items-stretch">
             
             {{-- Story Block --}}
             <div class="lg:w-7/12 bg-white p-10 md:p-16 rounded-[2.5rem] shadow-premium border border-gray-100" x-data="{ shown: false }" x-intersect.half="shown = true">
@@ -50,10 +50,21 @@
                 </div>
             </div>
 
+            {{-- Decorative Connector --}}
+            <div class="hidden lg:flex flex-col items-center justify-center px-2 gap-3 relative">
+                <div class="w-px flex-1 bg-gradient-to-b from-transparent via-primary-300 to-transparent"></div>
+                <div class="w-10 h-10 rounded-full border-2 border-primary-400 bg-white flex items-center justify-center shadow-lg shrink-0 z-10">
+                    <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                </div>
+                <div class="w-px flex-1 bg-gradient-to-b from-transparent via-primary-300 to-transparent"></div>
+            </div>
+
             {{-- Stats Block --}}
             <div class="lg:w-5/12 flex flex-col justify-between gap-6" x-data="{ shown: false }" x-intersect.half="shown = true">
                 <div class="reveal-hidden delay-100 bg-gray-900 text-white p-10 rounded-[2.5rem] flex-1 flex flex-col justify-center relative overflow-hidden group" :class="shown ? 'reveal-visible' : ''">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888081604-e221b06cfa04?auto=format&fit=crop&w=400&q=80')] opacity-5 group-hover:opacity-20 transition-opacity duration-1000"></div>
+                    <div class="absolute inset-0 bg-cover bg-center opacity-5 group-hover:opacity-20 transition-opacity duration-1000" style="background-image: url('{{ asset('images/project2.jpeg') }}')"></div>
                     <div class="relative z-10 text-center">
                         <span class="block text-6xl md:text-7xl font-black text-primary-500 mb-2">150<span class="text-3xl">+</span></span>
                         <span class="uppercase tracking-widest text-xs font-bold text-gray-400">Projects Delivered</span>
@@ -83,7 +94,7 @@
     </section>
 
     {{-- Team Section --}}
-    <section class="py-24" x-data="{ shown: false }" x-intersect.margin.-100px="shown = true">
+    <section class="py-24 bg-gray-50" x-data="{ shown: false }" x-intersect="shown = true">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-hidden" :class="shown ? 'reveal-visible' : ''">
                 <div>
@@ -104,6 +115,8 @@
                     ['name' => 'Busulwa A', 'role' => 'Landscape Architect', 'image' => asset('images/lee.jpeg')],
                     ['name' => 'John D', 'role' => 'Draughtsman', 'image' => asset('images/jd.jpeg')],
                 ];
+                // Fallback hero + background images from real project photos
+                $projectPhotos = array_map(fn($n) => asset("images/project{$n}.jpeg"), range(1, 14));
             @endphp
 
             {{-- Asymmetrical / Elegant Team Grid --}}
@@ -121,7 +134,7 @@
                                 src="{{ $member['image'] }}"
                                 alt="{{ $member['name'] }}"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out"
-                                onerror="this.onerror=null; this.src='{{ asset('images/house1.jpeg') }}';"
+                                onerror="this.onerror=null; this.src='{{ asset('images/project' . ($loop->index % 14 + 1) . '.jpeg') }}';"
                             />
                         </div>
                         
