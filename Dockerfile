@@ -6,12 +6,15 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libfreetype6-dev \
     zip \
+    libzip-dev \
+    libicu-dev \
     unzip \
     git \
     nodejs \
     npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo_mysql gd
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo_mysql gd zip intl
 
 # Install composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -31,6 +34,9 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 # Enable apache mod_rewrite
 RUN a2enmod rewrite
+
+# Fix git dubious ownership error for composer
+RUN git config --global --add safe.directory /var/www/html
 
 # Install PHP and Node.js dependencies
 RUN composer install --no-interaction --optimize-autoloader --no-dev
