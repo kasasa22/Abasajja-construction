@@ -8,7 +8,7 @@
     {{-- Hero Banner --}}
     <section class="relative bg-secondary pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden" x-data="{ shown: false }" x-intersect="shown = true">
         <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary-900/40 z-10"></div>
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888081604-e221b06cfa04?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center z-0 opacity-20"></div>
+        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('{{ asset('images/project5.jpeg') }}')"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div class="max-w-4xl reveal-hidden" :class="shown ? 'reveal-visible' : ''">
@@ -67,7 +67,7 @@
 
                     {{-- CTA Box --}}
                     <div class="mt-16 bg-gray-900 rounded-3xl p-8 text-center relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80')] opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-500" style="background-image: url('{{ asset('images/project6.jpeg') }}')"></div>
                         <h4 class="text-white font-bold text-lg mb-2 relative z-10">Start your project</h4>
                         <p class="text-gray-400 text-sm mb-6 relative z-10">Schedule a free consultation with our lead engineers today.</p>
                         <a href="/contact" class="inline-block bg-primary-600 text-white font-bold text-sm px-6 py-3 rounded-full hover:bg-white hover:text-gray-900 transition-colors relative z-10">Contact Us</a>
@@ -106,7 +106,7 @@
                             </ul>
                         </div>
                         <div class="md:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="{{ asset('images/house1.jpeg') }}" class="w-full h-full object-cover" alt="Pre-construction planning" />
+                            <img src="{{ asset('images/project7.jpeg') }}" class="w-full h-full object-cover" alt="Pre-construction planning" />
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                             </ul>
                         </div>
                         <div class="md:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="{{ asset('images/house2.jpeg') }}" class="w-full h-full object-cover" alt="General Contracting execution" />
+                            <img src="{{ asset('images/project8.jpeg') }}" class="w-full h-full object-cover" alt="General Contracting execution" />
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                             </a>
                         </div>
                         <div class="md:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="{{ asset('images/house3.jpeg') }}" class="w-full h-full object-cover" alt="Design-Build approach" />
+                            <img src="{{ asset('images/project9.jpeg') }}" class="w-full h-full object-cover" alt="Design-Build approach" />
                         </div>
                     </div>
                 </div>
@@ -174,10 +174,10 @@
                                 Transform existing spaces to meet modern standards of living. From complex historical townhouse expansions to high-end multi-family unit upgrades, we breathe new aesthetic and functional life into old properties.
                             </p>
                         </div>
-                         <div class="relative z-10 grid grid-cols-3 gap-4 mt-8">
-                            <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/house4.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
-                            <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/house5.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
-                            <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/house6.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
+                             <div class="relative z-10 grid grid-cols-3 gap-4 mt-8">
+                                <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/project10.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
+                                <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/project11.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
+                                <div class="h-32 rounded-2xl overflow-hidden shadow-md"><img src="{{ asset('images/project12.jpeg') }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"></div>
                          </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class="md:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="{{ asset('images/house4.jpeg') }}" class="w-full h-full object-cover" alt="Construction Management" />
+                            <img src="{{ asset('images/project13.jpeg') }}" class="w-full h-full object-cover" alt="Construction Management" />
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                 {{-- 06: Post Construction --}}
                 <div id="support" class="scroll-mt-32" x-intersect.half="activeSection = 'support'">
                     <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-900 text-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1200&q=80')] bg-cover opacity-10"></div>
+                        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ asset('images/project14.jpeg') }}')"></div>
                         <div class="relative z-10 w-full text-center">
                             <span class="text-primary-500 font-bold text-sm tracking-widest uppercase mb-4 block">06 — Commitment</span>
                             <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight">Post-Construction Support</h2>
