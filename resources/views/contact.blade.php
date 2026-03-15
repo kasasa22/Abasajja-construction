@@ -91,9 +91,8 @@
                                 this.success = { ok: false, message: 'Please fill out all required fields.' };
                                 return;
                             }
-                            const phoneNumber = '256769344073';
                             const text = `Name: ${this.form.name}\nEmail: ${this.form.email}\nPhone: ${this.form.phone}\nMessage: ${this.form.message}`;
-                            window.open('https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(text), '_blank');
+                            window.open(Alpine.store('whatsapp').getLink(text), '_blank');
                             this.success = { ok: true, message: 'Opening WhatsApp...' };
                             this.form = { name: '', email: '', phone: '', message: '' };
                         }

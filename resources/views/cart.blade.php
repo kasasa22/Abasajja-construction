@@ -141,7 +141,7 @@
                             @click="
                                 const items = $store.cart.items.map(i => `• ${i.title} (${i.packageName}) — US$${(i.price * i.quantity).toLocaleString()}`).join('\n');
                                 const msg = `Hello! I would like to enquire about the following plans:\n\n${items}\n\nTotal: US$${$store.cart.subtotal.toLocaleString()}`;
-                                window.open('https://wa.me/256769344073?text=' + encodeURIComponent(msg), '_blank')
+                                window.open($store.whatsapp.getLink(msg), '_blank')
                             "
                             class="w-full py-4 bg-[#25D366] hover:bg-[#1EBE5C] text-white font-bold rounded-2xl shadow-lg transition-all hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-3 mb-4"
                         >

@@ -59,6 +59,20 @@
                     return this.items.reduce((acc, i) => acc + (i.price * (i.quantity || 1)), 0);
                 }
             });
+
+            Alpine.store('whatsapp', {
+                baseUrl: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                    ? 'https://wa.me/'
+                    : 'https://web.whatsapp.com/send',
+                phone: '256769344073',
+
+                getLink(text = '') {
+                    if (this.baseUrl.includes('wa.me')) {
+                        return `https://wa.me/${this.phone}?text=${encodeURIComponent(text)}`;
+                    }
+                    return `${this.baseUrl}?phone=${this.phone}&text=${encodeURIComponent(text)}`;
+                }
+            });
         });
     </script>
 </head>
