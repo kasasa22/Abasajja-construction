@@ -143,7 +143,7 @@ $allPlans = [
     {{-- ══════════ Hero ══════════ --}}
     <section class="relative bg-secondary py-24 overflow-hidden" x-data="{ shown: false }" x-intersect="shown = true">
         <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary-900/40 z-10"></div>
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center z-0 opacity-20"></div>
+        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('{{ asset('images/project3.jpeg') }}')"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
             <div class="reveal-hidden" :class="shown ? 'reveal-visible' : ''">
