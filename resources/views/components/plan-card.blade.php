@@ -1,11 +1,11 @@
 @props(['plan'])
 
-<div class="relative group rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-[450px] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
+<div class="relative group rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-auto aspect-[4/5] md:aspect-[3/4] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
     {{-- Background Image --}}
     <img
         src="{{ asset('images/house' . ($plan['id'] % 6 + 1) . '.jpeg') }}"
         alt="{{ $plan['title'] }}"
-        class="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-80 group-hover:opacity-100"
+        class="absolute inset-0 w-full h-full object-contain transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-80 group-hover:opacity-100"
     />
     
     {{-- Gradient Overlays --}}

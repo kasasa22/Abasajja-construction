@@ -80,7 +80,7 @@ $blogs = [
         {{-- Featured Article (Large, Magazine-style) --}}
         @foreach($blogs as $blog)
             @if($blog['featured'])
-            <div class="group relative rounded-[2.5rem] overflow-hidden mb-16 shadow-2xl reveal-hidden delay-100 h-[600px] flex items-end" x-data="{ shown: false }" x-intersect="shown = true" :class="shown ? 'reveal-visible' : ''">
+            <div class="group relative rounded-[2.5rem] overflow-hidden mb-16 shadow-2xl reveal-hidden delay-100 h-[450px] md:h-[600px] flex items-end" x-data="{ shown: false }" x-intersect="shown = true" :class="shown ? 'reveal-visible' : ''">
                 
                 {{-- Background Image --}}
                 <img src="{{ $blog['image'] }}" alt="{{ $blog['title'] }}" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s] ease-out">

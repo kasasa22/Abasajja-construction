@@ -126,7 +126,7 @@
                          :class="shown ? 'reveal-visible' : ''" 
                          style="transition-delay: {{ $index * 100 }}ms">
                          
-                        <div class="relative overflow-hidden rounded-3xl aspect-[4/5] bg-gray-100 mb-6">
+                        <div class="relative overflow-hidden rounded-3xl aspect-square md:aspect-[4/5] bg-gray-100 mb-6">
                             {{-- Geometric overlay on hover --}}
                             <div class="absolute inset-0 bg-primary-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-multiply"></div>
                             

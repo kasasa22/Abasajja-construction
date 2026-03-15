@@ -396,7 +396,7 @@ $allPlans = [
         {{-- Plans Grid --}}
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <template x-for="plan in filteredPlans" :key="plan.id">
-                <div class="group relative rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-[440px] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
+                <div class="group relative rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-auto aspect-[4/5] md:aspect-[3/4] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
 
                     {{-- Background image --}}
                     <img

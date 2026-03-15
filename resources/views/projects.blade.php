@@ -7,7 +7,12 @@
     {{-- Hero Banner --}}
     <section class="relative bg-secondary py-24 overflow-hidden" x-data="{ shown: false }" x-intersect="shown = true">
         <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary-900/80 z-10"></div>
-        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-40" style="background-image: url('{{ asset('images/project3.jpeg') }}')"></div>
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('images/project3.jpeg') }}" alt="Portfolio Hero" class="w-full h-full object-cover blur-sm opacity-20">
+            <div class="absolute inset-0 flex items-center justify-center">
+                 <img src="{{ asset('images/project3.jpeg') }}" alt="Portfolio Hero" class="h-full w-auto object-contain py-10 opacity-60">
+            </div>
+        </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div class="max-w-3xl reveal-hidden" :class="shown ? 'reveal-visible' : ''">
@@ -25,8 +30,8 @@
         
         {{-- Project 1 --}}
         <div class="flex flex-col lg:flex-row gap-12 items-center bg-white p-6 md:p-10 rounded-[2.5rem] shadow-premium border border-gray-100 group">
-            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl h-[400px]">
-                <img src="{{ asset('images/project4.jpeg') }}" alt="The Havenwood Estate" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl bg-gray-50 border border-gray-100 shadow-inner">
+                <img src="{{ asset('images/project4.jpeg') }}" alt="The Havenwood Estate" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
             </div>
             <div class="w-full lg:w-1/2 flex flex-col justify-center">
                 <div class="inline-flex items-center gap-2 mb-4">
@@ -55,8 +60,8 @@
 
         {{-- Project 2 --}}
         <div class="flex flex-col lg:flex-row-reverse gap-12 items-center bg-white p-6 md:p-10 rounded-[2.5rem] shadow-premium border border-gray-100 group">
-            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl h-[400px]">
-                <img src="{{ asset('images/project8.jpeg') }}" alt="The Elm Street Revival" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl bg-gray-50 border border-gray-100 shadow-inner">
+                <img src="{{ asset('images/project8.jpeg') }}" alt="The Elm Street Revival" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
             </div>
             <div class="w-full lg:w-1/2 flex flex-col justify-center">
                 <div class="inline-flex items-center gap-2 mb-4">
@@ -85,8 +90,8 @@
 
         {{-- Project 3 --}}
         <div class="flex flex-col lg:flex-row gap-12 items-center bg-white p-6 md:p-10 rounded-[2.5rem] shadow-premium border border-gray-100 group">
-            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl h-[400px]">
-                <img src="{{ asset('images/project12.jpeg') }}" alt="Grandview Multi-Family" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-3xl bg-gray-50 border border-gray-100 shadow-inner">
+                <img src="{{ asset('images/project12.jpeg') }}" alt="Grandview Multi-Family" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
             </div>
             <div class="w-full lg:w-1/2 flex flex-col justify-center">
                 <div class="inline-flex items-center gap-2 mb-4">

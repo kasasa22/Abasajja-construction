@@ -107,11 +107,11 @@
             
             {{-- Image Gallery (Sticky on Desktop) --}}
             <div class="lg:sticky lg:top-24 h-max">
-                <div class="rounded-3xl overflow-hidden shadow-premium aspect-[4/3] bg-gray-200 mb-6 relative group border border-gray-100">
+                <div class="rounded-3xl overflow-hidden shadow-premium aspect-[4/3] bg-white mb-6 relative group border border-gray-100">
                     <img
                         :src="images[activeImage]"
                         alt="{{ $plan['title'] }}"
-                        class="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
+                        class="w-full h-full object-contain transition-all duration-700 ease-in-out transform group-hover:scale-105"
                     />
                     {{-- Navigation Arrows --}}
                     <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
