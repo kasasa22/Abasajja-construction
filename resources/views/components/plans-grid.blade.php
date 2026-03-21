@@ -61,6 +61,26 @@
             'beds' => 8,
             'baths' => 8,
             'sqm' => 198
+        ],
+        [
+            'id' => 7,
+            'title' => 'Executive Residential Estate',
+            'description' => 'Premium multi-family residential construction with reinforced concrete structure.',
+            'category' => 'Residential',
+            'price' => 850.0,
+            'beds' => 5,
+            'baths' => 4,
+            'sqm' => 380
+        ],
+        [
+            'id' => 8,
+            'title' => 'Contemporary Worship Center',
+            'description' => 'Engineered sacred space with superior acoustics and 500+ capacity.',
+            'category' => 'Church',
+            'price' => 2400.0,
+            'beds' => 0,
+            'baths' => 6,
+            'sqm' => 750
         ]
     ];
 

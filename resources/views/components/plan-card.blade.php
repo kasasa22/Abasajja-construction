@@ -1,11 +1,28 @@
 @props(['plan'])
 
-<div class="relative group rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-auto aspect-[4/5] md:aspect-[3/4] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
+@php
+    // Map plan IDs to specific images
+    $imageMap = [
+        1 => 'house2.jpeg',
+        2 => 'house3.jpeg',
+        3 => 'house4.jpeg',
+        4 => 'house5.jpeg',
+        5 => 'house1.jpeg',
+        6 => 'house6.jpeg',
+        7 => 'residential1.jpeg',
+        8 => 'church2.jpeg',
+        9 => 'fountain1.jpeg',
+        10 => 'landscaping.jpeg',
+    ];
+    $imageName = $imageMap[$plan['id']] ?? 'house' . (($plan['id'] % 6) + 1) . '.jpeg';
+@endphp
+
+<div class="relative group rounded-xl md:rounded-[2rem] overflow-hidden bg-gray-900 border border-white/10 shadow-2xl h-auto aspect-[4/5] md:aspect-[3/4] transform hover:-translate-y-2 transition-all duration-500 will-change-transform">
     {{-- Background Image --}}
     <img
-        src="{{ asset('images/house' . ($plan['id'] % 6 + 1) . '.jpeg') }}"
+        src="{{ asset('images/' . $imageName) }}"
         alt="{{ $plan['title'] }}"
-        class="absolute inset-0 w-full h-full object-contain transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-80 group-hover:opacity-100"
+        class="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-80 group-hover:opacity-100"
     />
     
     {{-- Gradient Overlays --}}
@@ -13,8 +30,8 @@
     <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 to-transparent z-10 transition-opacity duration-500 opacity-80 group-hover:opacity-100"></div>
 
     {{-- Top Badges --}}
-    <div class="absolute top-6 px-6 w-full flex justify-between items-start z-20">
-        <span class="px-5 py-2 bg-white/10 backdrop-blur-xl text-white text-[11px] font-extrabold tracking-[0.2em] uppercase rounded-full shadow-2xl border border-white/20">
+    <div class="absolute top-3 sm:top-4 md:top-6 px-3 sm:px-4 md:px-6 w-full flex justify-between items-start z-20">
+        <span class="px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 bg-white/10 backdrop-blur-xl text-white text-[9px] sm:text-[10px] md:text-[11px] font-extrabold tracking-[0.15em] sm:tracking-[0.2em] uppercase rounded-full shadow-2xl border border-white/20">
             {{ $plan['category'] }}
         </span>
         
@@ -26,13 +43,13 @@
     </div>
 
     {{-- Content --}}
-    <div class="absolute inset-x-0 bottom-0 p-6 z-20 flex flex-col justify-end h-full">
+    <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 md:p-6 z-20 flex flex-col justify-end h-full">
         <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-            <h3 class="text-3xl font-bold text-white mb-2 leading-tight tracking-tight drop-shadow-md">
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 leading-tight tracking-tight drop-shadow-md">
                 {{ $plan['title'] }}
             </h3>
-            
-            <p class="text-gray-300 text-sm font-light leading-relaxed line-clamp-2 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+
+            <p class="text-gray-300 text-xs sm:text-sm font-light leading-relaxed line-clamp-2 mb-3 sm:mb-4 md:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                 {{ $plan['description'] }}
             </p>
 
@@ -55,7 +72,7 @@
                 </div>
 
                 {{-- Price Tag --}}
-                <div class="px-4 py-2 bg-primary-600/90 backdrop-blur-sm rounded-xl border border-primary-500 text-white font-extrabold shadow-[0_0_20px_rgba(2,132,199,0.4)]">
+                <div class="px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 bg-primary-600/90 backdrop-blur-sm rounded-lg md:rounded-xl border border-primary-500 text-white text-xs sm:text-sm md:text-base font-extrabold shadow-[0_0_20px_rgba(2,132,199,0.4)]">
                     ${{ number_format($plan['price'], 0) }}
                 </div>
             </div>

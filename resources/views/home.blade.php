@@ -22,12 +22,12 @@
                     <span class="text-sm font-semibold text-primary-50 tracking-wide uppercase">Award-winning Designs</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6 md:mb-8 tracking-tight">
                     Smart house designs <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">built for living.</span>
                 </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl font-light reveal-hidden delay-100" :class="shown ? 'reveal-visible' : ''">
+
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 leading-relaxed max-w-2xl font-light reveal-hidden delay-100" :class="shown ? 'reveal-visible' : ''">
                     Browse ready-made house plans or request a custom design tailored to your plot, budget, and climate. Practical, buildable, and stunning.
                 </p>
                 
@@ -44,18 +44,18 @@
                     </a>
                 </div>
 
-                <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-8 border-t border-white/10 pt-10 reveal-hidden delay-300" :class="shown ? 'reveal-visible' : ''">
+                <div class="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 border-t border-white/10 pt-6 md:pt-10 reveal-hidden delay-300" :class="shown ? 'reveal-visible' : ''">
                     <div>
-                        <div class="text-4xl font-extrabold text-white">30<span class="text-primary-400">+</span></div>
-                        <div class="text-sm text-gray-400 font-medium tracking-wide uppercase mt-2">Ready Plans</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">30<span class="text-primary-400">+</span></div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium tracking-wide uppercase mt-1 md:mt-2">Ready Plans</div>
                     </div>
                     <div>
-                        <div class="text-4xl font-extrabold text-white">120<span class="text-primary-400">+</span></div>
-                        <div class="text-sm text-gray-400 font-medium tracking-wide uppercase mt-2">Custom Projects</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">120<span class="text-primary-400">+</span></div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium tracking-wide uppercase mt-1 md:mt-2">Custom Projects</div>
                     </div>
                     <div class="hidden sm:block">
-                        <div class="text-4xl font-extrabold text-white">4<span class="text-primary-400">+</span></div>
-                        <div class="text-sm text-gray-400 font-medium tracking-wide uppercase mt-2">Years Experience</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">4<span class="text-primary-400">+</span></div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium tracking-wide uppercase mt-1 md:mt-2">Years Experience</div>
                     </div>
                 </div>
             </div>
@@ -65,10 +65,10 @@
     {{-- Featured Plans Section --}}
     <section class="py-24 bg-gray-50" x-data="{ shown: false }" x-intersect.margin.-100px="shown = true">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal-hidden" :class="shown ? 'reveal-visible' : ''">
-                <h2 class="text-primary-600 font-bold tracking-wide uppercase text-sm mb-2">Our Portfolio</h2>
-                <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Featured Masterpieces</h3>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <div class="text-center mb-12 md:mb-16 reveal-hidden" :class="shown ? 'reveal-visible' : ''">
+                <h2 class="text-primary-600 font-bold tracking-wide uppercase text-xs sm:text-sm mb-2">Our Portfolio</h2>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 md:mb-6 tracking-tight">Featured Masterpieces</h3>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
                     Hand-picked plans for different budgets and lifestyles. Find the perfect starting point for your dream home.
                 </p>
             </div>
@@ -80,6 +80,150 @@
             <div class="text-center mt-16 reveal-hidden delay-200" :class="shown ? 'reveal-visible' : ''">
                 <a href="{{ url('/plans') }}" class="inline-flex items-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-bold rounded-xl hover:bg-gray-900 hover:text-white transition-all group">
                     View Complete Catalogue
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {{-- Building Categories Showcase --}}
+    <section class="py-24 bg-secondary relative overflow-hidden" x-data="{ shown: false }" x-intersect.margin.-100px="shown = true">
+        {{-- Background Pattern --}}
+        <div class="absolute inset-0 opacity-5" style="background-image: url('{{ asset('images/skyline.png') }}'); background-repeat: repeat; background-size: auto 100px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 md:mb-16 reveal-hidden" :class="shown ? 'reveal-visible' : ''">
+                <h2 class="text-primary-400 font-bold tracking-[0.25em] uppercase text-xs sm:text-sm mb-3">Our Expertise</h2>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">Built to Last, Designed to Inspire</h3>
+                <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light px-4">
+                    From residential homes to sacred spaces, we deliver construction excellence across every project category with precision engineering and architectural mastery.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                {{-- Residential Construction --}}
+                <div class="group reveal-hidden delay-100" :class="shown ? 'reveal-visible' : ''">
+                    <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gray-900 border border-white/10 shadow-2xl h-[280px] sm:h-[320px] md:h-[400px] transform hover:-translate-y-2 transition-all duration-500">
+                        <img
+                            src="{{ asset('images/residential.jpeg') }}"
+                            alt="Residential Construction"
+                            class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-70 group-hover:opacity-90"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                            <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-600/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-2 sm:mb-3 md:mb-4 border border-primary-400/30">
+                                Residential
+                            </div>
+                            <h4 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight">Modern Living Spaces</h4>
+                            <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 sm:mb-3 md:mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+                                Premium residential construction combining structural integrity with contemporary design. From single-family homes to multi-story developments, we build spaces where families thrive.
+                            </p>
+                            <div class="flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <span>View Projects</span>
+                                <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Church & Sacred Spaces --}}
+                <div class="group reveal-hidden delay-200" :class="shown ? 'reveal-visible' : ''">
+                    <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gray-900 border border-white/10 shadow-2xl h-[280px] sm:h-[320px] md:h-[400px] transform hover:-translate-y-2 transition-all duration-500">
+                        <img
+                            src="{{ asset('images/church.jpeg') }}"
+                            alt="Church Construction"
+                            class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-70 group-hover:opacity-90"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                            <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-600/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-2 sm:mb-3 md:mb-4 border border-primary-400/30">
+                                Sacred Spaces
+                            </div>
+                            <h4 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight">Churches & Worship Centers</h4>
+                            <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 sm:mb-3 md:mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+                                Specialized construction of sacred buildings with attention to acoustics, capacity, and spiritual atmosphere. We engineer structures that inspire worship and community gathering.
+                            </p>
+                            <div class="flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <span>View Projects</span>
+                                <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Landscaping & Water Features --}}
+                <div class="group reveal-hidden delay-300" :class="shown ? 'reveal-visible' : ''">
+                    <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gray-900 border border-white/10 shadow-2xl h-[280px] sm:h-[320px] md:h-[400px] transform hover:-translate-y-2 transition-all duration-500">
+                        <img
+                            src="{{ asset('images/fountain.jpeg') }}"
+                            alt="Water Features & Fountains"
+                            class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-70 group-hover:opacity-90"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                            <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-600/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-2 sm:mb-3 md:mb-4 border border-primary-400/30">
+                                Water Features
+                            </div>
+                            <h4 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight">Fountains & Waterworks</h4>
+                            <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 sm:mb-3 md:mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+                                Custom-built water features and decorative fountains engineered for durability and visual impact. We integrate hydraulic systems with architectural beauty for stunning outdoor installations.
+                            </p>
+                            <div class="flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <span>View Projects</span>
+                                <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Landscaping --}}
+                <div class="group reveal-hidden delay-400" :class="shown ? 'reveal-visible' : ''">
+                    <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gray-900 border border-white/10 shadow-2xl h-[280px] sm:h-[320px] md:h-[400px] transform hover:-translate-y-2 transition-all duration-500">
+                        <img
+                            src="{{ asset('images/landscaping.jpeg') }}"
+                            alt="Professional Landscaping"
+                            class="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-70 group-hover:opacity-90"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 z-10">
+                            <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-600/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-2 sm:mb-3 md:mb-4 border border-primary-400/30">
+                                Landscaping
+                            </div>
+                            <h4 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight">Landscape Architecture</h4>
+                            <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 sm:mb-3 md:mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+                                Professional site development and landscape construction that transforms outdoor spaces. From hardscaping to irrigation systems, we create functional and aesthetically striking environments.
+                            </p>
+                            <div class="flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                                <span>View Projects</span>
+                                <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- CTA --}}
+            <div class="text-center mt-16 reveal-hidden delay-500" :class="shown ? 'reveal-visible' : ''">
+                <a href="{{ url('/plans') }}" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-500 transition-all group shadow-[0_0_40px_-10px_rgba(2,132,199,0.5)] hover:shadow-[0_0_60px_-15px_rgba(2,132,199,0.7)]">
+                    Browse All Plans
                     <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

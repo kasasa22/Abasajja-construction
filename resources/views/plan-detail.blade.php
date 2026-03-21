@@ -21,6 +21,103 @@
                 'full' => ['price' => 850, 'includes' => ['Architectural drawings', 'Structural drawings', 'MEP drawings', '3D renders']]
             ]
         ],
+        7 => [
+            'id' => 7,
+            'title' => 'Executive Residential Estate',
+            'description' => 'Premium multi-family residential construction with reinforced concrete structure and modern amenities. Engineered for durability, this design features load-bearing walls, integrated utility systems, and optimized floor plans for maximum space efficiency.',
+            'category' => 'Residential',
+            'price' => 850.0,
+            'beds' => 5,
+            'baths' => 4,
+            'sqm' => 380,
+            'features' => [
+                'Reinforced concrete foundation and structure',
+                'Multi-story design with efficient circulation',
+                'Modern electrical and plumbing systems',
+                'Optimized natural ventilation',
+                'Durable exterior finishes',
+                'Spacious living and dining areas'
+            ],
+            'packages' => [
+                'basic' => ['price' => 2550, 'includes' => ['Approved architectural, structural and MEP drawings', 'Bill of quantities', 'Specifications manual']],
+                'architectural' => ['price' => 850, 'includes' => ['Approved architectural drawings', '3D renders', 'Material schedules']],
+                'structural' => ['price' => 950, 'includes' => ['Approved structural drawings', 'Foundation design', 'Load calculations']]
+            ]
+        ],
+        8 => [
+            'id' => 8,
+            'title' => 'Contemporary Worship Center',
+            'description' => 'Engineered sacred space with superior acoustics, reinforced roofing, and capacity for 500+ congregation. Features structural steel framework, professional sound engineering, and flexible interior layouts for worship and community activities.',
+            'category' => 'Church',
+            'price' => 2400.0,
+            'beds' => 0,
+            'baths' => 6,
+            'sqm' => 750,
+            'features' => [
+                'Acoustic engineering for optimal sound quality',
+                'Reinforced roof structure for long spans',
+                'Capacity for 500+ congregation',
+                'Multiple restroom facilities',
+                'Stage and altar platform design',
+                'Professional lighting integration',
+                'Accessible entry and circulation',
+                'Climate control systems'
+            ],
+            'packages' => [
+                'basic' => ['price' => 7200, 'includes' => ['Approved architectural, structural and MEP drawings', 'Acoustic design plans', 'Seating layout', 'Bill of quantities']],
+                'architectural' => ['price' => 2400, 'includes' => ['Approved architectural drawings', 'Interior layout plans', '3D visualization']],
+                'structural' => ['price' => 2800, 'includes' => ['Approved structural drawings', 'Foundation and roof engineering', 'Load analysis']]
+            ]
+        ],
+        9 => [
+            'id' => 9,
+            'title' => 'Decorative Water Feature',
+            'description' => 'Custom fountain installation with integrated hydraulic system, LED lighting, and durable stone construction. Professionally engineered for reliability, featuring waterproofing, pump systems, and low-maintenance materials.',
+            'category' => 'Water Feature',
+            'price' => 180.0,
+            'beds' => 0,
+            'baths' => 0,
+            'sqm' => 45,
+            'features' => [
+                'Integrated hydraulic pump system',
+                'LED underwater lighting',
+                'Durable stone or concrete construction',
+                'Waterproofing and drainage design',
+                'Low-maintenance filtration',
+                'Custom design options',
+                'Electrical integration plans'
+            ],
+            'packages' => [
+                'basic' => ['price' => 540, 'includes' => ['Construction drawings', 'Hydraulic system design', 'Electrical plans', 'Material specifications']],
+                'design' => ['price' => 180, 'includes' => ['Custom design drawings', '3D visualization', 'Material recommendations']],
+                'installation' => ['price' => 280, 'includes' => ['Installation guide', 'Plumbing schematics', 'Pump specifications']]
+            ]
+        ],
+        10 => [
+            'id' => 10,
+            'title' => 'Landscape Development Package',
+            'description' => 'Complete site landscaping with hardscape construction, irrigation systems, and professional plantings. Engineered approach to outdoor spaces featuring drainage solutions, retaining walls, pathways, and sustainable planting design.',
+            'category' => 'Landscaping',
+            'price' => 320.0,
+            'beds' => 0,
+            'baths' => 0,
+            'sqm' => 500,
+            'features' => [
+                'Professional grading and drainage design',
+                'Hardscape construction (pathways, patios)',
+                'Irrigation system layout',
+                'Retaining wall engineering',
+                'Plant selection and placement plan',
+                'Outdoor lighting design',
+                'Erosion control measures',
+                'Sustainable landscape practices'
+            ],
+            'packages' => [
+                'basic' => ['price' => 960, 'includes' => ['Site plan drawings', 'Hardscape layouts', 'Irrigation design', 'Planting plan', 'Material specifications']],
+                'design' => ['price' => 320, 'includes' => ['Landscape master plan', '3D visualization', 'Plant schedules']],
+                'construction' => ['price' => 480, 'includes' => ['Construction drawings', 'Grading plans', 'Detail sheets']]
+            ]
+        ],
         // ... more plans could be here
     ];
     
@@ -55,11 +152,30 @@
         4 => 'house5.jpeg',
         5 => 'house1.jpeg',
         6 => 'house6.jpeg',
+        7 => 'residential1.jpeg',
+        8 => 'church2.jpeg',
+        9 => 'fountain1.jpeg',
+        10 => 'landscaping.jpeg',
     ];
     $mainImage   = asset('images/' . ($planImages[$id] ?? 'house' . ($id % 6 + 1) . '.jpeg'));
-    $nextImage1  = asset('images/project' . (($id + 1) % 14 + 1) . '.jpeg');
-    $nextImage2  = asset('images/project' . (($id + 2) % 14 + 1) . '.jpeg');
-    $nextImage3  = asset('images/project' . (($id + 3) % 14 + 1) . '.jpeg');
+
+    // Additional images for gallery based on plan category
+    $additionalImages = [
+        7 => ['residential.jpeg', 'project1.jpeg', 'project2.jpeg'],
+        8 => ['church.jpeg', 'project3.jpeg', 'project4.jpeg'],
+        9 => ['fountain.jpeg', 'project5.jpeg', 'project6.jpeg'],
+        10 => ['landscaping.jpeg', 'project7.jpeg', 'project8.jpeg'],
+    ];
+
+    if (isset($additionalImages[$id])) {
+        $nextImage1 = asset('images/' . $additionalImages[$id][0]);
+        $nextImage2 = asset('images/' . $additionalImages[$id][1]);
+        $nextImage3 = asset('images/' . $additionalImages[$id][2]);
+    } else {
+        $nextImage1  = asset('images/project' . (($id + 1) % 14 + 1) . '.jpeg');
+        $nextImage2  = asset('images/project' . (($id + 2) % 14 + 1) . '.jpeg');
+        $nextImage3  = asset('images/project' . (($id + 3) % 14 + 1) . '.jpeg');
+    }
 @endphp
 
 <main class="bg-gray-50 pb-32" x-data="{

@@ -8,6 +8,50 @@
 @php
 $allPlans = [
     [
+        'id'          => 7,
+        'title'       => 'Executive Residential Estate',
+        'description' => 'Premium multi-family residential construction with reinforced concrete structure and modern amenities.',
+        'category'    => 'Residential',
+        'price'       => 850,
+        'beds'        => 5,
+        'baths'       => 4,
+        'sqm'         => 380,
+        'image'       => asset('images/residential1.jpeg'),
+    ],
+    [
+        'id'          => 8,
+        'title'       => 'Contemporary Worship Center',
+        'description' => 'Engineered sacred space with superior acoustics, reinforced roofing, and capacity for 500+ congregation.',
+        'category'    => 'Church',
+        'price'       => 2400,
+        'beds'        => 0,
+        'baths'       => 6,
+        'sqm'         => 750,
+        'image'       => asset('images/church2.jpeg'),
+    ],
+    [
+        'id'          => 9,
+        'title'       => 'Decorative Water Feature',
+        'description' => 'Custom fountain installation with integrated hydraulic system, LED lighting, and durable stone construction.',
+        'category'    => 'Water Feature',
+        'price'       => 180,
+        'beds'        => 0,
+        'baths'       => 0,
+        'sqm'         => 45,
+        'image'       => asset('images/fountain1.jpeg'),
+    ],
+    [
+        'id'          => 10,
+        'title'       => 'Landscape Development Package',
+        'description' => 'Complete site landscaping with hardscape construction, irrigation systems, and professional plantings.',
+        'category'    => 'Landscaping',
+        'price'       => 320,
+        'beds'        => 0,
+        'baths'       => 0,
+        'sqm'         => 500,
+        'image'       => asset('images/landscaping.jpeg'),
+    ],
+    [
         'id'          => 1,
         'title'       => 'Modern Family Villa',
         'description' => 'A spacious 4-bedroom villa with open-plan living, large terraces, and premium finishes.',
@@ -90,7 +134,7 @@ $allPlans = [
         filtersOpen:      false,
 
         /* ── Options ──────────────────────────────── */
-        categories:   ['All', 'Villa', 'Bungalow', 'Apartment', 'Cottage', 'Mansion', 'Storeyed house'],
+        categories:   ['All', 'Villa', 'Bungalow', 'Apartment', 'Cottage', 'Mansion', 'Storeyed house', 'Residential', 'Church', 'Water Feature', 'Landscaping'],
         bedsOptions:  ['Any', '2+', '3+', '4+', '6+'],
         priceOptions: ['Any', 'Under 300M', '300M – 600M', 'Above 600M'],
         sizeOptions:  ['Any', 'Under 100 m²', '100 – 250 m²', 'Above 250 m²'],
@@ -143,23 +187,23 @@ $allPlans = [
     {{-- ══════════ Hero ══════════ --}}
     <section class="relative bg-secondary py-24 overflow-hidden" x-data="{ shown: false }" x-intersect="shown = true">
         <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary-900/40 z-10"></div>
-        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('{{ asset('images/project3.jpeg') }}')"></div>
+        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('{{ asset('images/residential.jpeg') }}')"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
             <div class="reveal-hidden" :class="shown ? 'reveal-visible' : ''">
-                <p class="text-primary-400 text-sm font-bold tracking-[0.25em] uppercase mb-4">Our Catalogue</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-                    Find Your Perfect <span class="text-primary-400">Home Plan</span>
+                <p class="text-primary-400 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-3 md:mb-4">Construction-Ready Plans</p>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
+                    Engineered Designs for <span class="text-primary-400">Quality Construction</span>
                 </h1>
-                <p class="text-xl text-gray-300 font-light max-w-2xl mx-auto">
-                    Browse our catalogue of ready-made plans. Filter by type, size, bedrooms, and budget to narrow down exactly what you need.
+                <p class="text-base sm:text-lg md:text-xl text-gray-300 font-light max-w-2xl mx-auto">
+                    Professional architectural plans optimized for buildability, cost efficiency, and structural integrity. Browse by category, size, and budget to find construction-ready designs.
                 </p>
             </div>
         </div>
     </section>
 
     {{-- ══════════ Filter Bar ══════════ --}}
-    <div class="sticky top-16 z-40 bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+    <div class="bg-white border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
             {{-- Top row: Search + Mobile toggle --}}
